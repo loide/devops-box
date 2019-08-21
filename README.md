@@ -7,3 +7,7 @@
 * Ansible
 * Docker
 * Packer
+
+# Mount Folder: terraform
+If there is a folder with terraform scripts, mount and sync this host folder to
+the virtual machine.
