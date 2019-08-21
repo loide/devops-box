@@ -7,6 +7,7 @@ fi
 
 TERRAFORM_VERSION="0.11.7"
 PACKER_VERSION="1.2.4"
+
 # create new ssh key
 [[ ! -f /home/ubuntu/.ssh/mykey ]] \
 && mkdir -p /home/ubuntu/.ssh \
@@ -21,8 +22,10 @@ else
   apt-get update
   apt-get -y install docker.io ansible unzip
 fi
+
 # add docker privileges
-usermod -G docker ubuntu
+usermod -aG docker ubuntu
+
 # install pip
 pip install -U pip && pip3 install -U pip
 if [[ $? == 127 ]]; then
@@ -30,6 +33,7 @@ if [[ $? == 127 ]]; then
     python get-pip.py
     python3 get-pip.py
 fi
+
 # install awscli and ebcli
 pip install -U awscli
 pip install -U awsebcli
