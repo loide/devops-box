@@ -7,6 +7,7 @@ fi
 
 TERRAFORM_VERSION="0.12.6"
 PACKER_VERSION="1.2.4"
+AWSEBCLI_VERSION="3.12.0"
 
 # create new ssh key
 [[ ! -f /home/ubuntu/.ssh/mykey ]] \
@@ -36,7 +37,7 @@ fi
 
 # install awscli and ebcli
 pip install -U awscli
-pip install -U awsebcli
+pip install awsebcli==${AWSEBCLI_VERSION}
 
 #terraform
 T_VERSION=$(/usr/local/bin/terraform -v | head -1 | cut -d ' ' -f 2 | tail -c +2)
