@@ -6,7 +6,7 @@ if [ -e /etc/redhat-release ] ; then
 fi
 
 TERRAFORM_VERSION="0.12.6"
-PACKER_VERSION="1.2.4"
+PACKER_VERSION="1.4.3"
 AWSEBCLI_VERSION="3.12.0"
 
 # create new ssh key
